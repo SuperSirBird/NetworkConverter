@@ -49,7 +49,17 @@
   </style>
 </head>
 <body>
-
-    <progress value="50" max="100">
-
+  <progress value="0" max="100" id="mainloader">
+		
+		<script>
+			var mainlobj = document.getElementById("mainloader");
+			window.requestAnimationFrame(lupdate);
+			function lupdate() {
+				if (mainlobj.value < 99) {
+					mainlobj.value = mainlobj.value + 1;
+					window.requestAnimationFrame(lupdate);
+				}
+			}
+			window.requestAnimationFrame(lupdate);
+		</script>
 </body>
